@@ -240,7 +240,10 @@ export function PageHero({
   meta?: string[] | undefined;
 }) {
   return (
-    <header className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden border-b border-hairline bg-background pt-24 pb-12 md:pt-28 md:pb-16">
+    <header
+      className="hero-screen relative grid grid-rows-[1fr] overflow-x-hidden border-b border-hairline bg-background"
+      aria-label="Page introduction"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.55]"
@@ -250,17 +253,19 @@ export function PageHero({
           backgroundSize: "clamp(70px, 8vw, 120px) 100%",
         }}
       />
-      <div className="container-ttn relative flex flex-1 flex-col justify-center py-8">
+      <div className="container-ttn relative flex flex-col justify-center pt-[5.5rem] pb-10 md:pt-28 md:pb-12">
         <Reveal>
           <Micro>{label}</Micro>
         </Reveal>
         <Reveal delay={80}>
-          <h1 className="display-xl mt-6 max-w-5xl text-ink md:mt-7">{title}</h1>
+          <h1 className="mt-5 max-w-5xl text-[clamp(2.35rem,7.2vw,6.25rem)] font-semibold leading-[0.95] tracking-[-0.04em] text-ink uppercase md:mt-6">
+            {title}
+          </h1>
         </Reveal>
-        <div className="mt-8 grid gap-8 md:mt-10 lg:grid-cols-12">
+        <div className="mt-7 grid gap-6 md:mt-8 lg:grid-cols-12 lg:gap-8">
           {body && (
             <Reveal delay={150} className="lg:col-span-6">
-              <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base lg:text-lg">
                 {body}
               </p>
             </Reveal>
