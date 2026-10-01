@@ -1,14 +1,9 @@
-import researchAsset from "@/assets/research-focus.jpg.asset.json";
-import signalAsset from "@/assets/signal-work.jpg.asset.json";
-import teamAsset from "@/assets/ml-team.jpg.asset.json";
-
 export const logoInk = "/images/ttn-logo-ink.png";
 export const logoLight = "/images/ttn-logo-light.png";
 export const founderPhoto = "/images/founder-dan.jpg";
-
-export const imgResearch = researchAsset.url;
-export const imgSignal = signalAsset.url;
-export const imgTeam = teamAsset.url;
+export const imgResearch = "/images/research-focus.jpg";
+export const imgSignal = "/images/signal-work.jpg";
+export const imgTeam = "/images/ml-team.jpg";
 
 export const EMAIL = "dan@ttn-talent.com";
 export const LINKEDIN_DAN = "https://www.linkedin.com/in/dankirkpatrick/";
