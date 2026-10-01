@@ -173,6 +173,27 @@
   border-top: 1px solid var(--hairline);
 }
 
+/* Full-viewport heroes — fill the fold without clipping content */
+@utility hero-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: 100svh;
+}
+
+/* Hero text fade — no blur/filter (filters cause scroll text glitches) */
+.hero-fade {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: hero-fade-in 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-fade-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Motion primitives */
 @utility reveal-init {
   opacity: 0;
@@ -235,11 +256,9 @@
 @keyframes noise-settle {
   from {
     opacity: 0.85;
-    filter: blur(3px);
   }
   to {
     opacity: 0.32;
-    filter: blur(0);
   }
 }
 
@@ -247,12 +266,10 @@
   from {
     opacity: 0;
     transform: translateY(14px);
-    filter: blur(6px);
   }
   to {
     opacity: 1;
     transform: none;
-    filter: blur(0);
   }
 }
 
@@ -281,9 +298,11 @@
   }
 
   .page-enter-init,
-  .page-enter {
+  .page-enter,
+  .hero-fade {
     opacity: 1;
     transform: none;
     transition: none;
+    animation: none;
   }
 }
